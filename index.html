@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous">
+
+		<title>Topic Trade Topic Taker</title>
+
+		<style>
+			.container-xl {
+				margin-bottom: 40px;
+			}
+
+			h5 {
+				margin-top: 10px;
+			}
+		</style>
+	</head>
+
+	<body class="container-xl">
+		<div id="app">
+			<br><h1>Topic Trade Tourney &ndash; Topic Taker</h1>
+			<hr>
+			<button class="btn btn-outline-primary" @click.prevent="newTopic">Get a topic!</button>
+			<br>
+			<h5>{{ output }}</h5>
+			<hr>
+			<h2>Stats</h2>
+			<p>These probabilities were decided based votes from debaters at IBA Marietta:</p>
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Topic</th>
+						<th scope="col">Votes</th>
+						<th scope="col">Probability</th>
+					</tr>
+				</thead>
+				<tbody>
+					<template v-for="(prob, index) in probabilities">
+						<tr>
+							<th>{{ topics[index] }}</th>
+							<td>{{ votes[index] }}</td>
+							<td>{{ (prob / pTotal * 100).toFixed(2) }}%</td>
+						</tr>
+					</template>
+				</tbody>
+			</table>
+		</div>
+
+		<script src="./vue.min.js"></script>
+		<script src="./script.js"></script>
+	</body>
+</html>

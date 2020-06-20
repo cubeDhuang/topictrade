@@ -11,18 +11,14 @@ const app = new Vue({
 			"Persian Gulf",
 			"Belt and Road Initiative",
 			"Universal Basic Income",
-			"Pharmaceutical Price Controls",
 			"Offensive Cyber Operations",
-			"Offshore Balancing",
 		],
 		votes: [
 			1,
 			10,
 			7,
 			13,
-			0,
 			1,
-			1
 		],
 		probabilities: [],
 		output: "Click the button to get a topic!",

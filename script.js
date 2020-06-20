@@ -2,7 +2,7 @@ const app = new Vue({
 	el: "#app",
 
 	created() {
-		this.probabilities = this.votes.map(cur => Math.sqrt(cur + 1));
+		this.probabilities = this.votes.map(cur => Math.sqrt(cur));
 	},
 
 	data: {
